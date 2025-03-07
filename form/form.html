@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <form action=""  onsubmit="display()" target="_blank" method="get">
+            <label for="name">Name:</label>
+            <input type="text" onchange="handleChange()"  id="name">
+            <br><br>
+            <label for="mail">E-mail:</label>
+            <input type="email" id="mail"  onchange="handleChange()">
+            <br><br>
+            <label for="number">Number:</label>
+            <input type="number" id="number"  onchange="handleChange()">
+            <br><br>
+            <label for="native ">Native:</label>
+            <input type="text" id="native"  onchange="handleChange()">
+             <p>Gender:</p>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="male" onchange="handleChange()">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="female" value="female" onchange="handleChange()">
+            <br><br>
+            <!-- <button type="submit" onclick="display()">Submit</button> -->
+            <button type="submit" >Submit</button>
+
+        </form>
+    </div>
+    <script> 
+    let formValues = {};
+
+    function handleChange(                                                                                                  ) {
+        event.preventDefault();
+        formValues.name = document.getElementById("name").value;
+        formValues.eMail=document.getElementById("mail").value;
+        formValues.mobileNumber=document.getElementById("number").value;
+        formValues.native=document.getElementById("native").value;
+        const maleGender=document.getElementById("male");
+         const femaleGender=document.getElementById("female")
+        if(maleGender.checked)
+        {
+            formValues.gender="male";
+        }
+        else if(femaleGender.checked){
+            formValues.gender="female";
+        }
+        else{
+            formValues.gender="other";
+        }
+    }
+
+       function display() {
+    //     let n=document.getElementById("name").value;
+    //     let m=document.getElementById("mail").value;
+    //     let num=document.getElementById("number").value;
+    //     let nat=document.getElementById("native").value;
+     event.preventDefault();
+    //     // console.log("Name:"+name);
+    //     // console.log("E-Mail:"+mail);
+    //     // console.log("Number:"+number);
+    //     // console.log("Native:"+native);
+    //     let male=document.getElementById("male");
+    //     let gen;
+    //     if(male.checked)
+    //    {
+    //     gen="male";
+    //    }
+    //    else if(female.checked){
+    //     gen="female";
+    //    }
+    //    else{
+    //     gen="other";
+    //    }
+    //   const details={};
+    //   details.name=n;
+    //   details.email=m;
+    //   details.number=num;
+    //   details.native=nat;
+    //   details.gender=gen;
+     //jdetails=JSON.stringify(formValues);
+      console.log(JSON.stringify(formValues));
+
+
+    }
+    </script>
+</body>
+</html>

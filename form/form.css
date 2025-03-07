@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    
+    justify-content: center;
+    padding:5%;
+    
+}
+#container{
+     width: 50vw;  
+     height: 60vh;
+     background-color: aqua;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+}
+@media only screen and (max-width: 365px) {
+    #container{
+        width: 100vw;
+    }
+  }
